@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  postgres:
+    container_name: people_postgres
+    image: "postgres"
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: people
+      POSTGRES_USER: people
+      POSTGRES_PASSWORD: people
+    volumes:
+      - people_postgres:/var/lib/postgresql/data
+volumes:
+  people_postgres:
